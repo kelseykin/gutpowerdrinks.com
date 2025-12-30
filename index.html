@@ -1,26 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Thank You</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gut Power Drinks — Thank you</title>
+  <meta name="description" content="Gut Power Drinks is now closed. Thank you for supporting us over the years." />
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #fff;
-      color: #111;
-      text-align: center;
-      padding: 80px 20px;
+    :root{
+      --bg: #fbfbf8;
+      --text: #111111;
+      --muted: rgba(17,17,17,.72);
+      --hairline: rgba(17,17,17,.12);
+      --shadow: 0 20px 60px rgba(0,0,0,.12);
+      --radius: 22px;
+      --max: 980px;
     }
-    h1 { font-size: 2.4rem; }
-    p { font-size: 1.1rem; max-width: 600px; margin: 20px auto; }
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 700px at 15% -10%, rgba(166, 210, 120, .22), transparent 60%),
+                  radial-gradient(900px 600px at 85% 10%, rgba(220, 170, 120, .18), transparent 55%),
+                  var(--bg);
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 36px 18px;
+    }
+    .wrap{
+      width:100%;
+      max-width: var(--max);
+    }
+    .card{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 26px;
+      padding: 26px;
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.68);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero{
+      border-radius: calc(var(--radius) - 6px);
+      overflow:hidden;
+      position:relative;
+      min-height: 420px;
+      border: 1px solid rgba(0,0,0,.06);
+      background: #eee;
+    }
+    .hero img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+      transform: scale(1.02);
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.00) 40%, rgba(0,0,0,.22) 100%);
+      pointer-events:none;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--hairline);
+      background: rgba(255,255,255,.70);
+      font-size: 13px;
+      letter-spacing: .02em;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: rgba(166, 210, 120, .95);
+      box-shadow: 0 0 0 4px rgba(166, 210, 120, .18);
+    }
+    h1{
+      margin: 16px 0 8px;
+      font-size: clamp(32px, 4vw, 44px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+    .sub{
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+      max-width: 52ch;
+    }
+    .ctaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 18px;
+    }
+    a.btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--hairline);
+      text-decoration:none;
+      color: var(--text);
+      font-weight: 600;
+      background: rgba(255,255,255,.78);
+      transition: transform .06s ease, background .2s ease;
+    }
+    a.btn:hover{ background: rgba(255,255,255,.92); transform: translateY(-1px); }
+    a.btn.primary{
+      background: rgba(17,17,17,.92);
+      color: white;
+      border-color: rgba(17,17,17,.92);
+    }
+    a.btn.primary:hover{ background: rgba(17,17,17,1); }
+    .fine{
+      margin-top: 18px;
+      font-size: 13px;
+      color: rgba(17,17,17,.58);
+      line-height: 1.5;
+      border-top: 1px solid var(--hairline);
+      padding-top: 14px;
+    }
+    .brand{
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .right{
+      padding: 8px 6px 6px 6px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .kicker{
+      font-size: 14px;
+      color: rgba(17,17,17,.62);
+      margin: 8px 0 0;
+    }
+    @media (max-width: 860px){
+      .card{ grid-template-columns: 1fr; }
+      .hero{ min-height: 280px; }
+    }
   </style>
 </head>
 <body>
-  <h1>Thank you</h1>
-  <p>
-    Thank you for supporting us over the years.  
-    We’re so grateful for everyone who was part of this journey.
-  </p>
+  <main class="wrap">
+    <section class="card">
+      <div class="hero" aria-hidden="true">
+        <!-- Brand-relevant product photo from your current site -->
+        <img src="https://gutpowerdrinks.com/cdn/shop/products/IMG_2651-537754.jpg?v=1633501304&width=2000" alt="" />
+      </div>
+
+      <div class="right">
+        <div class="badge"><span class="dot"></span><span class="brand">Gut Power Drinks</span></div>
+        <h1>Sip better.</h1>
+        <p class="sub">
+          After a wonderful run, Gut Power Drinks is now closed.
+          Thank you for supporting us over the years — every order, message, and share meant a lot.
+        </p>
+
+        <p class="kicker">
+          With gratitude,<br/>
+          The Gut Power team
+        </p>
+
+        <div class="ctaRow">
+          <!-- Swap these links if you want to keep people connected -->
+          <a class="btn primary" href="mailto:support@gutpowerdrinks.com">Contact</a>
+        </div>
+
+        <div class="fine">
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
